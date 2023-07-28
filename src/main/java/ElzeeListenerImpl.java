@@ -31,7 +31,6 @@ public class ElzeeListenerImpl extends ElzeeBaseListener {
 
     @Override
     public void enterReassigningExpr(ElzeeParser.ReassigningExprContext ctx) {
-        System.out.println("reassigning");
         String variableName = ctx.ID(0).getText();
         String newValue = ctx.ID(1).getText();
 

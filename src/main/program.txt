@@ -1,19 +1,18 @@
 //Declare a number like this:
 tallet hussam er 3000
 
-divider hussam med 10
-print hussam
-
 //Declare a string/word like this:
-//ordet hussein er "hejsa"
+ordet hussein er "hejsa"
 
-//Redeclare a variable
-//print hussein
+//Redeclare a variable like this:
+hussein er hussam
 
 //Plus, minus, divide, multiply
-//plus hussam med 25
+plus hussam med 25
+minus hussam med 3
+divider hussam med 10
+gang hussam med 23
 
-//Print out by
-//plus hussam med hussam
-
-//udskriv hussam
+//Print out by either saying 'udskriv', 'skriv' eller 'print'
+print hussein
+udskriv hussam
