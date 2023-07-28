@@ -10,7 +10,7 @@ print hussam
 //Redeclare a variable
 //print hussein
 
-//Plus, minus and multiply
+//Plus, minus, divide, multiply
 //plus hussam med 25
 
 //Print out by

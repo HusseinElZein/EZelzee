@@ -6,6 +6,9 @@ expr: assigningExpr
     | reassigningExpr
     | additionExpr
     | printExpr
+    | subtractionExpr
+    | multiplyExpr
+    | divideExpr
     ;
 
 assigningExpr: type ID ('er' | 'is') content;
