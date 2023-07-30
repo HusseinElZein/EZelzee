@@ -11,23 +11,23 @@ expr: assigningExpr
     | divideExpr
     ;
 
-assigningExpr: type ID ('er' | 'is') content;
-reassigningExpr: ID ('er' | 'is') ID;
-additionExpr: 'plus' ID ('med' | 'with') (NUMBER | ID);
-subtractionExpr: 'minus' ID ('med' | 'with') (NUMBER | ID);
-multiplyExpr: 'gang' ID ('med' | 'with') (NUMBER | ID);
-divideExpr: 'divider' ID ('med' | 'with') (NUMBER | ID);
-printExpr: ('skriv' | 'udskriv' | 'print') value; // Update printExpr rule to support NUMBER as well
+assigningExpr: type ID 'er' content;
+reassigningExpr: ID 'er' ID;
+additionExpr: 'plus' ID 'med' (NUMBER | ID);
+subtractionExpr: 'minus' ID 'med' (NUMBER | ID);
+multiplyExpr: 'gang' ID 'med' (NUMBER | ID);
+divideExpr: 'divider' ID 'med' (NUMBER | ID);
+printExpr: ('skriv' | 'udskriv' | 'print') value;
 
 value: NUMBER | STRING | ID;
-content: NUMBER | STRING;
+content: NUMBER | STRING | BOOLEAN;
 
-type: 'tallet' | 'ordet';
+type: 'tallet' | 'ordet' | 'sandheden';
 NUMBER: [0-9]+;
+BOOLEAN: 'sand' | 'falsk';
 ID: [a-zA-Z_]+ [a-zA-Z0-9_]*;
 
 STRING: '"' ('\\' . | ~["\\])* '"';
-// The STRING rule now correctly allows double quotes and escaped characters within the string.
 
 WHITESPACE: [ \t\n\r] -> skip;
 COMMENT: '//' ~[\n]* -> skip;

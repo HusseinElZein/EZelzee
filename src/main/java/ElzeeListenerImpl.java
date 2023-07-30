@@ -1,4 +1,3 @@
-import org.antlr.v4.runtime.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,6 +21,8 @@ public class ElzeeListenerImpl extends ElzeeBaseListener {
         if (type.equals("tallet") && value.matches("[0-9]+")) {
             symbolTable.put(variableName, value);
         } else if (type.equals("ordet") && value.startsWith("\"") && value.endsWith("\"")) {
+            symbolTable.put(variableName, value);
+        } else if (type.equals("sandheden")) {
             symbolTable.put(variableName, value);
         } else {
             System.err.println("Error: Illegal assignment! Variable type and value type do not match.");
@@ -48,10 +49,9 @@ public class ElzeeListenerImpl extends ElzeeBaseListener {
         String variableName = ctx.ID(0).getText();
 
         String operand;
-        if(ctx.ID().size() > 1){
+        if (ctx.ID().size() > 1) {
             operand = ctx.ID(1).getText();
-        }
-        else{
+        } else {
             operand = ctx.NUMBER().getText();
         }
 
@@ -92,14 +92,15 @@ public class ElzeeListenerImpl extends ElzeeBaseListener {
             System.exit(0);
         }
     }
-    @Override public void enterSubtractionExpr(ElzeeParser.SubtractionExprContext ctx) {
+
+    @Override
+    public void enterSubtractionExpr(ElzeeParser.SubtractionExprContext ctx) {
         String variableName = ctx.ID(0).getText();
 
         String operand;
-        if(ctx.ID().size() > 1){
+        if (ctx.ID().size() > 1) {
             operand = ctx.ID(1).getText();
-        }
-        else{
+        } else {
             operand = ctx.NUMBER().getText();
         }
 
@@ -119,14 +120,14 @@ public class ElzeeListenerImpl extends ElzeeBaseListener {
         }
     }
 
-    @Override public void enterMultiplyExpr(ElzeeParser.MultiplyExprContext ctx) {
+    @Override
+    public void enterMultiplyExpr(ElzeeParser.MultiplyExprContext ctx) {
         String variableName = ctx.ID(0).getText();
 
         String operand;
-        if(ctx.ID().size() > 1){
+        if (ctx.ID().size() > 1) {
             operand = ctx.ID(1).getText();
-        }
-        else{
+        } else {
             operand = ctx.NUMBER().getText();
         }
 
@@ -147,14 +148,14 @@ public class ElzeeListenerImpl extends ElzeeBaseListener {
 
     }
 
-    @Override public void enterDivideExpr(ElzeeParser.DivideExprContext ctx) {
+    @Override
+    public void enterDivideExpr(ElzeeParser.DivideExprContext ctx) {
         String variableName = ctx.ID(0).getText();
 
         String operand;
-        if(ctx.ID().size() > 1){
+        if (ctx.ID().size() > 1) {
             operand = ctx.ID(1).getText();
-        }
-        else{
+        } else {
             operand = ctx.NUMBER().getText();
         }
 

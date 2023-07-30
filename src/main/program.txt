@@ -13,6 +13,10 @@ minus hussam med 3
 divider hussam med 10
 gang hussam med 23
 
+//Make a boolean
+sandheden abe er sand
+sandheden monkey er falsk
+
 //Print out by either saying 'udskriv', 'skriv' eller 'print'
 print hussein
 udskriv hussam
